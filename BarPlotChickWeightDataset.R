@@ -8,7 +8,7 @@ plot(chickwts$feed)	# plot function will plot the feed frequency
 
 feeds <- table(chickwts$feed)	# Crating a table feeds using reference ($)
 
-barplot(feeds)		# Simple barplot of feeds to show frequency of 			# different species
+barplot(feeds)		# Simple barplot of feeds to show frequency of different species
 barplot(feeds[order(feeds, decreasing = TRUE)]
 			# barplot in decreasing frequency of species
 
