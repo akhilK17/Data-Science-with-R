@@ -43,5 +43,28 @@ pie(feeds[order(feeds, decreasing = TRUE)],
     clockwise = TRUE,
     col = rainbow(6),
     main = "Pie Chart of Feeds from chickwts")
+	
+# Any chart can be exported in an image of format either png or jpeg by using png/jpeg function in R, example is below:
+png("Barplot.png",	# Creating a dummy file named Barplot
+    width = 888,	# define the size of the image
+    height = 571)
+
+# Set up the margins of image
+par(oma = c(1, 1, 1, 1))
+par(mar = c(4, 5, 2, 1))
+
+# run the same barplot function with same parameter (described aboce) to plot the chart in the dummy file named Barplot.png
+# any plot can be exported by using png/jpeg function
+
+barplot(feeds[order(feeds)],
+        horiz  = TRUE,
+        las    = 1,  	# it gives the orientation of axis labels
+        col    = c("beige", "blanchedalmond", "bisque1", "bisque2", "bisque3", "bisque4"),
+        border = NA,  	# No boarders on bars
+        main   = "Frequencies on Different Feeds\nin chickwts Dataset",  # \n is line break
+        xlab   = "Number of Chicks"
+        )
+
+dev.off()	# this is mandatory parameter to close the file, without using this, the plot exporte process will not be compled.
 
 rm(list = ls())		# to clear out the working environment
